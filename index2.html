@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>halaman ketiga</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            text-align: center;
+            animation: pop-up 1s ease-out;
+        }
+
+        h1 {
+            color: #ff4081;
+            font-size: 3em;
+            margin: 0;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #d32f2f;
+            margin-top: 15px;
+            line-height: 1.8;
+            color: #8e44ad;
+            font-style: italic;
+        }
+
+        .btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.3em;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        @keyframes pop-up {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Animasi bunga */
+        .flower {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('http://clipart-library.com/images/pTqre7gGc.png') no-repeat center;
+            background-size: cover;
+            animation: fall 4s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(800px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Animasi hati berdebar */
+        .heart {
+            position: absolute;
+            font-size: 50px;
+            color: #ff4081;
+            animation: heartbeat 1s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Tombol lanjut */
+        #next-button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.3em;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        #next-button:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>I Love You More 🩷</h1>
+        <p>
+             ikan hiu makan selang 
+            <br><br>
+            cintaku padamu ga akan pernah hilang
+            <br><br>
+        
+        </p>
+
+        <!-- Tombol lanjut ke halaman berikutnya -->
+        <button id="next-button" onclick="tampilkanKejutan()">pencet pencett</button>
+    </div>
+
+    <!-- Bunga bertaburan -->
+    <div id="flower-container"></div>
+
+    <!-- Animasi hati berdebar -->
+    <div id="heart-container">
+        <div class="heart" style="top: 10%; left: 10%;">🩷</div>
+        <div class="heart" style="top: 20%; right: 10%;">🩷</div>
+    </div>
+
+    <script>
+        // Menambahkan bunga bertaburan
+        const flowerContainer = document.getElementById('flower-container');
+
+        // Fungsi untuk menampilkan bunga dan hati berdebar
+        function tampilkanKejutan() {
+            // Menambahkan bunga bertaburan
+            for (let i = 0; i < 15; i++) {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.style.left = Math.random() * 100 + '%';
+                flower.style.animationDelay = Math.random() * 5 + 's';
+                flowerContainer.appendChild(flower);
+            }
+
+            // Menambahkan animasi hati berdebar
+            const heartContainer = document.getElementById('heart-container');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '🩷';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = Math.random() * 100 + '%';
+            heartContainer.appendChild(heart);
+        }
+    </script>
+</body>
+</html>

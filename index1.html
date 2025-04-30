@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>halaman kedua</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #fbc2eb, #a18cd1);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            animation: pop-up 1s ease-out;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+            margin-top: 15px;
+            color: #8e44ad;
+        }
+
+        .btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        @keyframes pop-up {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Animasi bunga */
+        .flower {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('http://clipart-library.com/images/pTqre7gGc.png') no-repeat center;
+            background-size: cover;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(700px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Animasi bintang jatuh */
+        .star {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fdfd96;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #fdfd96, 0 0 30px #fdfd96;
+            animation: twinkle 1.5s infinite ease-in-out, fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+            100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+        }
+
+        /* Kejutan */
+        #kejutan {
+            display: none;
+            padding: 15px;
+            background-color: #ffeb3b;
+            color: #d32f2f;
+            font-size: 1.2em;
+            border-radius: 10px;
+            margin-top: 15px;
+            animation: fade-in 2s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Tombol Kejutan */
+        #kejut-button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        #kejut-button:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        /* Tombol Halaman Selanjutnya */
+        #next-button {
+            display: none;
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        #next-button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>selamat siang, sayang</h1>
+        <p>
+            semangat yaa sayang aku
+        </p>
+
+        <!-- Tombol kejutan -->
+        <button id="kejut-button" onclick="tampilkanKejutan()">kejutannnn</button>
+
+        <!-- Kejutan -->
+        <div id="kejutan">
+            <p> kejutan
+            <br><br>
+            makasi udah baik sama aku, aku happy banget bisa di temuin sama orang kaya kamu, kenapa aku bisa happy? karenaaa sebelumnya aku belum pernah sehappy ini, bahkan ga pernah se excited ini sama orang, pas sama kamu energyku bener bener slalu ngerasa penuh
+            makany aku semangat buat jalanin hidup aku, semangat ngoding hahaha, kamu tau ga? pas kemarin lagi di gunung aku kangen banget sama kamu tau, terus bayangin klo naik sama kamu pasti jauh lebih seru, 
+            aku harap kamu ga pergi ninggalin aku, soalny kamu berarti banget di kehidupan aku hahahaha, walapun aku tau people come and go, tapi kali ini tolong jangan pergi dulu yaa
+            <br><br>
+            i love you infinitely 🩷
+        </p>
+        </div>
+
+        <!-- Tombol Halaman Selanjutnya -->
+        <button id="next-button" onclick="window.location.href = 'index2.html';">lanjut ke halaman kedua</button>
+    </div>
+
+    <!-- Bunga bertaburan -->
+    <div id="flower-container"></div>
+
+    <!-- Bintang jatuh -->
+    <div id="star-container"></div>
+
+    <!-- Elemen audio untuk musik latar belakang (dalam keadaan hidden) -->
+    <audio id="background-music" loop>
+        <source src="a2.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung pemutar audio.
+    </audio>
+
+    <script>
+        // Menambahkan bunga bertaburan
+        const flowerContainer = document.getElementById('flower-container');
+        // Menambahkan bintang jatuh
+        const starContainer = document.getElementById('star-container');
+
+        // Fungsi untuk menampilkan bunga dan bintang serta mulai musik
+        function tampilkanKejutan() {
+            // Menampilkan pesan kejutan
+            document.getElementById('kejutan').style.display = 'block';
+
+            // Menyembunyikan tombol kejutan
+            document.getElementById('kejut-button').style.display = 'none';
+
+            // Menampilkan tombol halaman selanjutnya setelah kejutan
+            document.getElementById('next-button').style.display = 'block';
+
+            // Memulai musik latar belakang
+            document.getElementById('background-music').play();
+
+            // Menambahkan bunga bertaburan
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.style.left = Math.random() * 100 + '%';
+                flower.style.animationDelay = Math.random() * 5 + 's';
+                flowerContainer.appendChild(flower);
+            }
+
+            // Menambahkan bintang jatuh
+            for (let i = 0; i < 30; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starContainer.appendChild(star);
+            }
+        }
+    </script>
+</body>
+</html>
